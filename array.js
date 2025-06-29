@@ -51,3 +51,30 @@ let bike ={
 
 
 console.log (`Sub Location: ${bike.subLocation.district[0]},`)
+
+
+
+
+//-----------------Array of object----------------------------
+// ----------Map Method-------------------
+
+
+let bikes = [
+    {Brand: "Yamaha", Model: "FZ", Year: 2020, Color: "Black", Price: 150000},
+    {Brand: "Hero", Model: "Splander", Year: 2010, Color: "Red", Price: 110000},
+    {Brand: "Royal Enfield", Model: "Classic", Year: 2025, Color: "Black", Price: 350000},
+    {Brand: "Suzuki", Model: "Gixxer", Year: 2023, Color: "Blue", Price: 250000}
+];
+
+//Brand list
+const brands= bikes.map(product=> product.Brand);
+console.log ("Bike Brand list is:",brands);
+
+//Model list
+const models = bikes.map (product => product.Model);
+console.log ("Bike Model list is: ", models);
+
+
+
+const price = bikes.map (product=> product.Price);
+console.log ("Bike Price list is: ", price);
