@@ -40,3 +40,13 @@ let name = " Love You JavaScript";
 for (let i = 0; i<100; i++){
     console.log (`${name}+ ${i + 1}`);
 }
+
+
+/// ---------------------------
+
+let count1 = 50;
+
+
+for ( let i = 10; i < 30; i--) {
+    console.log (`Count1: ${count1}, i: ${i}`);
+}
