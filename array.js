@@ -13,68 +13,86 @@ let { name, age } = person;
 
 console.log(name, age);
 
-
-
-
-
-
-
 //-------------------------------
 
-let bike ={
-    name: "Yamaha",
-    model: "FZ",
-    year: 2020,
-    color: "Black",
-    price: 150000,
+let bike = {
+  name: "Yamaha",
+  model: "FZ",
+  year: 2020,
+  color: "Black",
+  price: 150000,
 
-    headLocation: {
-        city: "Dhaka",
-        country: "Bangladesh"
-    },
+  headLocation: {
+    city: "Dhaka",
+    country: "Bangladesh",
+  },
 
-    subLocation: {
-        district: "Tangail",
-        thana: "Madhupur"
-    }
-    }
+  subLocation: {
+    district: "Tangail",
+    thana: "Madhupur",
+  },
+};
 
-
-    console.log(`Bike Name: ${bike.name}, 
+console.log(`Bike Name: ${bike.name}, 
         Bike Model: ${bike.model},
-        Head Location: ${bike.headLocation.city},`)
+        Head Location: ${bike.headLocation.city},`);
 
-
-
-
-
-
-
-console.log (`Sub Location: ${bike.subLocation.district[0]},`)
-
-
-
+console.log(`Sub Location: ${bike.subLocation.district[0]},`);
 
 //-----------------Array of object----------------------------
-// ----------Map Method-------------------
-
+// ------------------Map Method-------------------
 
 let bikes = [
-    {Brand: "Yamaha", Model: "FZ", Year: 2020, Color: "Black", Price: 150000},
-    {Brand: "Hero", Model: "Splander", Year: 2010, Color: "Red", Price: 110000},
-    {Brand: "Royal Enfield", Model: "Classic", Year: 2025, Color: "Black", Price: 350000},
-    {Brand: "Suzuki", Model: "Gixxer", Year: 2023, Color: "Blue", Price: 250000}
+  { Brand: "Yamaha", Model: "FZ", Year: 2020, Color: "Black", Price: 150000 },
+  { Brand: "Hero", Model: "Splander", Year: 2010, Color: "Red", Price: 110000 },
+  {
+    Brand: "Royal Enfield",
+    Model: "Classic",
+    Year: 2025,
+    Color: "Black",
+    Price: 350000,
+  },
+  {
+    Brand: "Suzuki",
+    Model: "Gixxer",
+    Year: 2023,
+    Color: "Blue",
+    Price: 250000,
+  },
 ];
 
 //Brand list
-const brands= bikes.map(product=> product.Brand);
-console.log ("Bike Brand list is:",brands);
+const brands = bikes.map((product) => product.Brand);
+console.log("Bike Brand list is:", brands);
 
 //Model list
-const models = bikes.map (product => product.Model);
-console.log ("Bike Model list is: ", models);
+const models = bikes.map((product) => product.Model);
+console.log("Bike Model list is: ", models);
+
+const price = bikes.map((product) => product.Price);
+console.log("Bike Price list is: ", price);
+
+//Using for each.......find color
+bikes.forEach((product) => console.log(product.Color));
+
+//Using for each........ find year
+bikes.forEach((product) => console.log(product.Year));
 
 
 
-const price = bikes.map (product=> product.Price);
-console.log ("Bike Price list is: ", price);
+//using filter method
+
+const filteredBikes = bikes.filter (product => product.Brand.includes ("Yamaha"));
+console.log ("Filtering Bike result is : ", filteredBikes);
+
+
+const filterPrice = bikes.filter (product => product.Price <= 180000);
+console.log ("Filtering Price result is : ", filterPrice);
+
+
+
+
+//Using find method
+
+const findBike = bikes.find(product => product.Brand === "Hero");
+console.log("Finding Bike result is: ", findBike);
